@@ -2,9 +2,9 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
-import Image from 'assets/images/icons/no-plate.jpg';
-import Tra1 from 'assets/images/icons/tra2.webp';
-import Tra2 from 'assets/images/icons/tra1.avif';
+import Image from 'assets/images/vehicles/locAsmall.jpg';
+import Tra1 from 'assets/images/vehicles/locABig.jpg';
+
 
 
 import { PlusCircleOutlined } from '@ant-design/icons';
@@ -29,19 +29,27 @@ return(
         <h3>Violation Type: </h3>
         <br/>
         <h3>Location A/Gate: </h3>
+        <h3>Time And Speed at A/Gate: </h3>
         <h3>Location B/Gate: </h3>
-        <h3>Lane: </h3>
+        <h3>Time And Speed at B/Gate: </h3>
+        <h3>Average Vehicle Speed </h3>
+        <h3>Time taken in minutes </h3>
       </Stack>
       <Stack spacing={3} sx={{marginLeft:'30px'}}>
         <h3 style={{color:'red'}}>KA02MG0212</h3>
         <h3>02/22/2024</h3>
-        <h3 style={{color:'red'}}>Average Speed
+        <h3 style={{color:'red'}}>Over Speed
             <br/>
             <span style={{color:'green',fontSize:'14px'}}><PlusCircleOutlined /> Add more violations</span>
         </h3>
-        <h3 style={{color:'purple',fontSize:'12px'}}>WHQ4+59P, KIADB Auto Complex, Vinoba Nagara, Shivamogga, Karnataka 577204</h3>
-        <h3 style={{color:'purple',fontSize:'12px'}}>chowki circle, Vinoba Nagara, Shivamogga, Karnataka 577204</h3>
-        <h3>A</h3>
+        <Typography variant='h5' fontWeight={'bold'} color={'green'} >Alkola Circle, Shivamogga, Karnataka 577204</Typography>
+        <Typography variant='h5' fontWeight={'bold'} color={'red'} >Time: 12:30 PM And Vehicle Speed 100 Km/hr</Typography>
+        
+        <Typography variant='h5' fontWeight={'bold'} color={'green'} >Ayanur Circle, Shivamogga, Karnataka 577204</Typography>
+        <Typography variant='h5' fontWeight={'bold'} color={'red'} >Time: 12:40 PM And Vehicle Speed 120 Km/hr</Typography>
+        <Typography variant='h5' fontWeight={'bold'} color={'red'} > Avg Speed 120 Km/hr</Typography>
+        <Typography variant='h5' fontWeight={'bold'} color={'red'} >10 min</Typography>
+        
       </Stack>
    
     </Box>
@@ -76,11 +84,11 @@ return(
      <Grid item xs={12} md={6} sx={{mt:-4}}>
      <Box sx={{textAlign:'left',marginBottom:'20px'}}>
             <img className='img img-center text-center border rounded' src={Tra1} width={'100%'} height={300}/>
-            <h3 style={{color:'blueviolet'}}>Image Captured  in: vinobanagar,shimaga. at : 12:30 PM 23/01/2026 </h3>
+            <h3 style={{color:'blueviolet'}}>Image Captured  in: Alkola,shimaga. at : 12:30 PM 23/01/2026 </h3>
         </Box>
         <Box sx={{textAlign:'left',marginBottom:'20px'}}>
-            <img className='img img-center text-center border rounded' src={Tra2} width={'100%'} height={300}/>
-            <h3 style={{color:'blueviolet'}}>Image Captured  in: Gandinagar,shimaga. at : 1:30 PM 23/01/2026 </h3>
+            <img className='img img-center text-center border rounded' src={Tra1} width={'100%'} height={300}/>
+            <h3 style={{color:'blueviolet'}}>Image Captured  in: Ayanur,shimaga. at : 12:40 PM 23/01/2026 </h3>
         </Box>
      </Grid>
  </Grid>
