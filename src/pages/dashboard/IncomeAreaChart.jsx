@@ -86,25 +86,33 @@ export default function IncomeAreaChart({ slot }) {
 
   const [series, setSeries] = useState([
     {
-      name: 'Page Views',
+      name: 'Helmet Violations',
       data: [0, 86, 28, 115, 48, 210, 136]
     },
     {
-      name: 'Sessions',
+      name: 'Triple Riding',
       data: [0, 43, 14, 56, 24, 105, 68]
+    },
+    {
+      name: 'Wrong Lane',
+      data: [0, 53, 18, 66, 34, 85, 69]
     }
   ]);
 
   useEffect(() => {
     setSeries([
       {
-        name: 'Page Views',
+        name: 'Helmet Violation',
         data: slot === 'month' ? [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35] : [31, 40, 28, 51, 42, 109, 100]
       },
       {
-        name: 'Sessions',
+        name: 'Wrong Lane',
         data: slot === 'month' ? [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41] : [11, 32, 45, 32, 34, 52, 41]
-      }
+      },
+      {
+        name: 'Trple Riding',
+        data: slot === 'month' ? [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35] : [31, 40, 28, 51, 42, 109, 100]
+      },
     ]);
   }, [slot]);
 
