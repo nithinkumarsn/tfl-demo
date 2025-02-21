@@ -34,7 +34,7 @@ export default function Header() {
 
   // common header
   const mainHeader = (
-    <Toolbar>
+    <Toolbar >
       <IconButton
         disableRipple
         aria-label="open drawer"

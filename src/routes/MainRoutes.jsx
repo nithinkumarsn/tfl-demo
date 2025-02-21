@@ -13,7 +13,7 @@ const Violations = Loadable(lazy(()=>import('pages/violations/Violations')));
 const ViolationsDetails = Loadable(lazy(()=>import('pages/violations/ViolationsDetails')));
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
-
+const DynamicFilterTable = Loadable(lazy(()=> import('pages/violations/DynamicFilterTable')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -37,7 +37,7 @@ const MainRoutes = {
         },
         {
           path:'violations',
-          element:<Violations/>
+          element:<DynamicFilterTable/>
         },
         {
           path:'violations-details',
