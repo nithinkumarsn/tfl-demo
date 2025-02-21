@@ -10,6 +10,15 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { tflViolations } from './data';
 import { Link } from 'react-router-dom';
+import Tf1no from '../../assets/images/vehicles/tf1no.jpg'
+import Tf2no from '../../assets/images/vehicles/tf2no.jpg'
+import Tf3no from '../../assets/images/vehicles/tf3no.jpg'
+import Tf4no from '../../assets/images/vehicles/tf4no.jpg'
+import Tf1big from '../../assets/images/vehicles/tf1big.jpg'
+import Tf2big from '../../assets/images/vehicles/tf2big.jpg'
+import Tf3big from '../../assets/images/vehicles/tf3big.jpg'
+import Tf4big from '../../assets/images/vehicles/tf4big.jpg'
+
 
 const columns = [
   { field: 'date', headerName: 'Date', width: 150 },
@@ -26,7 +35,7 @@ const columns = [
     renderCell: (params) => (
       <>
         <IconButton color="primary">
-        <Link to="/dashboard/violations-details"  style={{textDecoration:'none'}}> <VisibilityIcon /></Link>
+        <Link to="/dashboard/violations-details"  state={{ rowData: params.row }}  style={{textDecoration:'none'}}> <VisibilityIcon /></Link>
         </IconButton>
         <IconButton color="secondary">
           <EditIcon />
@@ -40,21 +49,21 @@ const columns = [
 ];
 
 const tflData = [
-    { id: 1, date: '10/02/2025', vehicleNo: 'KA12ER2345', violationType: 'overSpeed', locationA: 'Ayanur', locationB: 'Mudinakoppa', averageVehicleSpeed: '62.5 km/hr', timeTaken: '10 min', status: 'Fine Paid' },
-    { id: 2, date: '11/02/2025', vehicleNo: 'KA14FG5678', violationType: 'noHelmet', locationA: 'Mudinakoppa', locationB: 'Kumsi', averageVehicleSpeed: '52.5 km/hr', timeTaken: '10 min', status: 'Violation Proved But Not Paid Fine' },
-    { id: 3, date: '12/02/2025', vehicleNo: 'KA10AB1234', violationType: 'overSpeed', locationA: 'Kumsi', locationB: 'Ayanur', averageVehicleSpeed: '82.5 km/hr', timeTaken: '10 min', status: 'Fine Paid' },
-    { id: 4, date: '13/02/2025', vehicleNo: 'KA09XY5678', violationType: 'overSpeed', locationA: 'Ayanur', locationB: 'Kumsi', averageVehicleSpeed: '72.5 km/hr', timeTaken: '12 min', status: 'Fine Paid' },
-    { id: 5, date: '14/02/2025', vehicleNo: 'KA08LM4321', violationType: 'noHelmet', locationA: 'Mudinakoppa', locationB: 'Ayanur', averageVehicleSpeed: '55.0 km/hr', timeTaken: '15 min', status: 'Violation Proved But Not Paid Fine' },
-    { id: 6, date: '15/02/2025', vehicleNo: 'KA11CD9876', violationType: 'overSpeed', locationA: 'Kumsi', locationB: 'Mudinakoppa', averageVehicleSpeed: '80.0 km/hr', timeTaken: '14 min', status: 'Fine Paid' },
-    { id: 7, date: '16/02/2025', vehicleNo: 'KA06PQ3456', violationType: 'noHelmet', locationA: 'Davanagere', locationB: 'Chitradurga', averageVehicleSpeed: '60.0 km/hr', timeTaken: '13 min', status: 'Violation Proved But Not Paid Fine' },
-    { id: 8, date: '17/02/2025', vehicleNo: 'KA03GH7890', violationType: 'overSpeed', locationA: 'Bangalore', locationB: 'Tumkur', averageVehicleSpeed: '90.0 km/hr', timeTaken: '20 min', status: 'Fine Paid' },
-    { id: 9, date: '18/02/2025', vehicleNo: 'KA02EF2345', violationType: 'noHelmet', locationA: 'Mysore', locationB: 'Nanjangud', averageVehicleSpeed: '58.0 km/hr', timeTaken: '11 min', status: 'Violation Proved But Not Paid Fine' },
-    { id: 10, date: '19/02/2025', vehicleNo: 'KA07UV5678', violationType: 'overSpeed', locationA: 'Chikmagalur', locationB: 'Kadur', averageVehicleSpeed: '70.0 km/hr', timeTaken: '16 min', status: 'Fine Paid' },
-    { id: 11, date: '20/02/2025', vehicleNo: 'KA05JK2345', violationType: 'noHelmet', locationA: 'Hassan', locationB: 'Sakleshpur', averageVehicleSpeed: '54.0 km/hr', timeTaken: '10 min', status: 'Violation Proved But Not Paid Fine' },
-    { id: 12, date: '21/02/2025', vehicleNo: 'KA01AB1234', violationType: 'overSpeed', locationA: 'Mangalore', locationB: 'Udupi', averageVehicleSpeed: '88.0 km/hr', timeTaken: '19 min', status: 'Fine Paid' },
-    { id: 13, date: '22/02/2025', vehicleNo: 'KA04YZ6789', violationType: 'noHelmet', locationA: 'Hubli', locationB: 'Dharwad', averageVehicleSpeed: '57.0 km/hr', timeTaken: '12 min', status: 'Violation Proved But Not Paid Fine' },
-    { id: 14, date: '23/02/2025', vehicleNo: 'KA13OP9876', violationType: 'overSpeed', locationA: 'Belgaum', locationB: 'Gokak', averageVehicleSpeed: '85.0 km/hr', timeTaken: '18 min', status: 'Fine Paid' },
-    { id: 15, date: '24/02/2025', vehicleNo: 'KA15MN5432', violationType: 'noHelmet', locationA: 'Gulbarga', locationB: 'Bidar', averageVehicleSpeed: '56.5 km/hr', timeTaken: '17 min', status: 'Violation Proved But Not Paid Fine' }
+    { id: 1, date: '10/02/2025', vehicleNo: 'KA12ER2345',vehicleImg:Tf1big,vehicleNoImg:Tf1no, violationType: 'overSpeed', locationA: 'Ayanur', locationB: 'Mudinakoppa', averageVehicleSpeed: '62.5 km/hr', timeTaken: '10 min', status: 'Fine Paid' },
+    { id: 2, date: '11/02/2025', vehicleNo: 'KA14FG5678',vehicleImg:Tf2big,vehicleNoImg:Tf2no, violationType: 'noHelmet', locationA: 'Mudinakoppa', locationB: 'Kumsi', averageVehicleSpeed: '52.5 km/hr', timeTaken: '10 min', status: 'Violation Proved But Not Paid Fine' },
+    { id: 3, date: '12/02/2025', vehicleNo: 'KA10AB1234',vehicleImg:Tf3big,vehicleNoImg:Tf3no, violationType: 'overSpeed', locationA: 'Kumsi', locationB: 'Ayanur', averageVehicleSpeed: '82.5 km/hr', timeTaken: '10 min', status: 'Fine Paid' },
+    { id: 4, date: '13/02/2025', vehicleNo: 'KA09XY5678',vehicleImg:Tf4big,vehicleNoImg:Tf4no, violationType: 'tripleRide', locationA: 'Ayanur', locationB: 'Kumsi', averageVehicleSpeed: '72.5 km/hr', timeTaken: '12 min', status: 'Fine Paid' },
+    { id: 5, date: '14/02/2025', vehicleNo: 'KA08LM4321',vehicleImg:Tf1big,vehicleNoImg:Tf1no, violationType: 'laneDiscipline', locationA: 'Mudinakoppa', locationB: 'Ayanur', averageVehicleSpeed: '55.0 km/hr', timeTaken: '15 min', status: 'Violation Proved But Not Paid Fine' },
+    { id: 6, date: '15/02/2025', vehicleNo: 'KA11CD9876',vehicleImg:Tf1big,vehicleNoImg:Tf1no, violationType: 'wrongLane', locationA: 'Kumsi', locationB: 'Mudinakoppa', averageVehicleSpeed: '80.0 km/hr', timeTaken: '14 min', status: 'Fine Paid' },
+    // { id: 7, date: '16/02/2025', vehicleNo: 'KA06PQ3456', violationType: 'noHelmet', locationA: 'Davanagere', locationB: 'Chitradurga', averageVehicleSpeed: '60.0 km/hr', timeTaken: '13 min', status: 'Violation Proved But Not Paid Fine' },
+    // { id: 8, date: '17/02/2025', vehicleNo: 'KA03GH7890', violationType: 'overSpeed', locationA: 'Bangalore', locationB: 'Tumkur', averageVehicleSpeed: '90.0 km/hr', timeTaken: '20 min', status: 'Fine Paid' },
+    // { id: 9, date: '18/02/2025', vehicleNo: 'KA02EF2345', violationType: 'noHelmet', locationA: 'Mysore', locationB: 'Nanjangud', averageVehicleSpeed: '58.0 km/hr', timeTaken: '11 min', status: 'Violation Proved But Not Paid Fine' },
+    // { id: 10, date: '19/02/2025', vehicleNo: 'KA07UV5678', violationType: 'overSpeed', locationA: 'Chikmagalur', locationB: 'Kadur', averageVehicleSpeed: '70.0 km/hr', timeTaken: '16 min', status: 'Fine Paid' },
+    // { id: 11, date: '20/02/2025', vehicleNo: 'KA05JK2345', violationType: 'noHelmet', locationA: 'Hassan', locationB: 'Sakleshpur', averageVehicleSpeed: '54.0 km/hr', timeTaken: '10 min', status: 'Violation Proved But Not Paid Fine' },
+    // { id: 12, date: '21/02/2025', vehicleNo: 'KA01AB1234', violationType: 'overSpeed', locationA: 'Mangalore', locationB: 'Udupi', averageVehicleSpeed: '88.0 km/hr', timeTaken: '19 min', status: 'Fine Paid' },
+    // { id: 13, date: '22/02/2025', vehicleNo: 'KA04YZ6789', violationType: 'noHelmet', locationA: 'Hubli', locationB: 'Dharwad', averageVehicleSpeed: '57.0 km/hr', timeTaken: '12 min', status: 'Violation Proved But Not Paid Fine' },
+    // { id: 14, date: '23/02/2025', vehicleNo: 'KA13OP9876', violationType: 'overSpeed', locationA: 'Belgaum', locationB: 'Gokak', averageVehicleSpeed: '85.0 km/hr', timeTaken: '18 min', status: 'Fine Paid' },
+    // { id: 15, date: '24/02/2025', vehicleNo: 'KA15MN5432', violationType: 'noHelmet', locationA: 'Gulbarga', locationB: 'Bidar', averageVehicleSpeed: '56.5 km/hr', timeTaken: '17 min', status: 'Violation Proved But Not Paid Fine' }
   ];
 const Violations = () => {
   const [filters, setFilters] = useState({
@@ -111,6 +120,9 @@ const Violations = () => {
           <MenuItem value="">All</MenuItem>
           <MenuItem value="overSpeed">Over Speed</MenuItem>
           <MenuItem value="noHelmet">No Helmet</MenuItem>
+          <MenuItem value="tripleRide">Triple Riding</MenuItem>
+          <MenuItem value="laneDiscipline">Lane  Discipline</MenuItem>
+          <MenuItem value="wrongLane">Wrong Lane</MenuItem>
         </TextField>
         <Typography variant="subtitle1" sx={{ mt: 2 }}>Status</Typography>
         <TextField select fullWidth value={filters.status} onChange={(e) => handleFilterChange('status', e.target.value)}>

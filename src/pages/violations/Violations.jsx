@@ -82,13 +82,7 @@ const Violations = () => {
               </MenuItem>
               <MenuItem key={2} value="NoHelmet">
                 Without Helmet
-              </MenuItem>
-              <MenuItem key={2} value="UnderAge">
-                No DL / Under age
-              </MenuItem>
-              <MenuItem key={2} value="NoInssurance">
-                No Vehicle and PA innsurance
-              </MenuItem>
+              </MenuItem>          
               <MenuItem key={2} value="OverSpeed">
                 Over Speed
               </MenuItem>
@@ -104,12 +98,7 @@ const Violations = () => {
               <MenuItem key={2} value="NoHeadLight">
                 Without Head Light
               </MenuItem>
-              <MenuItem key={2} value="NoParking">
-                No Parking 
-              </MenuItem>
-              <MenuItem key={2} value="SignalJump">
-                Signal Jump
-              </MenuItem>
+             
             </TextField>
           </Grid>
           <Grid item sx={{ marginTop: 2 }}>
